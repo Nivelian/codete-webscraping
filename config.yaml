@@ -1,2 +1,2 @@
-port: :8080
-static_path: ./static/
+port: :8080             # server port
+static_path: ./static/  # path to directory with static html files
