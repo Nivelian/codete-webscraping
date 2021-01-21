@@ -115,7 +115,11 @@ func GetWebsiteInfo(url string) ([]*model.Record, error) {
 
 	resp, err := http.Get(url)
 	if err != nil {
-		return nil, helpers.LogErr(err, "Failed to get the page by url %v", url)
+		msg := fmt.Sprintf("Failed to get the page by url %v", url)
+		if resp != nil {
+			msg += fmt.Sprintf(". Response status code = %v", resp.StatusCode)
+		}
+		return nil, helpers.LogErr(err, msg)
 	}
 	defer resp.Body.Close()
 
