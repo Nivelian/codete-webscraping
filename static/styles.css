@@ -1,0 +1,20 @@
+* {box-sizing: border-box}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+#result {
+    margin-top: 20px;
+}
